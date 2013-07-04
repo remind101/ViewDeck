@@ -28,7 +28,7 @@
 // thanks to http://stackoverflow.com/a/8594878/742176
 
 #if TARGET_OS_IPHONE && defined(__IPHONE_5_0) && (__IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_5_0) && __clang__ && (__clang_major__ >= 3)
-#define II_SDK_SUPPORTS_WEAK 1
+#define II_SDK_SUPPORTS_WEAK 0
 #elif TARGET_OS_MAC && defined(__MAC_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_7) && __clang__ && (__clang_major__ >= 3)
 #define II_SDK_SUPPORTS_WEAK 1
 #else
