@@ -952,6 +952,19 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     _viewAppeared = 0;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    if (!self.centerController || ![self.centerController respondsToSelector:@selector(preferredStatusBarStyle)]) {
+        return UIStatusBarStyleLightContent;
+    } else {
+        if ([self.centerController isKindOfClass:[UINavigationController class]] && ((UINavigationController *)self.centerController).topViewController) {
+            return ((UINavigationController *)self.centerController).topViewController.preferredStatusBarStyle;
+        } else {
+            return self.centerController.preferredStatusBarStyle;
+        }
+    }
+}
+
 #pragma mark - Rotation IOS6
 
 - (BOOL)shouldAutorotate {
